@@ -1,0 +1,8 @@
+<h1>Add bids</h1>
+
+<%= form_for @bid, url: user_project_bids_path(user_id: @user.id,project_id: @project.id),method: :post  do |f| %>
+	<%= f.label :price %>
+	<%= f.hidden_field :user_id,value: @user.id %>
+	<%= f.text_field :price %><br>
+	<%= f.submit "Add bids"%>
+<% end %>

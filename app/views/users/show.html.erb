@@ -1,0 +1,9 @@
+<h1>User Details</h1>
+ 	<%if @user.present? %>
+		<% session[:user_id]=@user.id %>
+		<%= @user.fullname + " - " %>
+		<%= @user.role %><br>
+<% end %>
+<br>
+<%= link_to "Click to view project",user_projects_path(@user)%><br>
+<%= link_to "Create new project",new_user_project_path(@user) %>

@@ -1,0 +1,8 @@
+<h1>View Bids</h1>
+<% if @bids.empty? %>
+	<%= message="Bids not available" %>
+<% else %>
+	<% @bids.each do |bid| %>
+		<%= bid.price%><br>
+	<% end %>
+<% end %>

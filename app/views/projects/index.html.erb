@@ -1,0 +1,19 @@
+
+<h1>Projects</h1>
+
+<ul>
+	<% @projects.each do |project| %>  
+      <%= project.name %><br>
+      <%= project.skill %><br>
+      <%= project.state %><br>
+      <%= project.city %><br>
+      
+      <% if @user.role =="seller" %>
+        <%= link_to "Add bids",new_user_project_bid_path(user_id: @user.id,project_id: project.id)%><br> <br>
+      <% else %> 
+      	<%= link_to "View bids",user_project_bids_path(user_id: @user.id,project_id: project.id)%><br> <br>
+
+	    <% end %>
+  <% end %>
+</ul>
+
